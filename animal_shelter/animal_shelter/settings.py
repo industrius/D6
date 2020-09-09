@@ -40,6 +40,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,18 +80,18 @@ WSGI_APPLICATION = 'animal_shelter.wsgi.application'
 #     }
 # }
 
-# DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'APP',
-        'USER': 'app',
-        'PASSWORD': 'P@ssw0rd',
-        'HOST': 'localhost',   
-        'PORT': '5432',
-    }    
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'APP',
+#         'USER': 'app',
+#         'PASSWORD': 'P@ssw0rd',
+#         'HOST': 'localhost',   
+#         'PORT': '5432',
+#     }    
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
