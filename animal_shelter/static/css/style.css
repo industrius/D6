@@ -1,0 +1,43 @@
+@font-face{
+	src: url('../fonts/MontserratAlternates-Regular.ttf');
+	font-family: 'MontserratAlternates';
+	font-weight: normal;
+}
+
+@font-face{
+	src: url('../fonts/MontserratAlternates-Bold.ttf');
+	font-family: 'MontserratAlternates';
+	font-weight: bold;
+}
+
+body{
+	font-family: MontserratAlternates;
+	background-color: #e1b88a
+}
+
+.tx_color{
+	color: #f9ede1;
+}
+
+.hc_color{
+	background-color: #f7e0ca;
+}
+
+.bg_color{
+	background-color: #f9ede1;
+}
+
+.cb_color{
+	color: #913e01;
+}
+
+.btn_hover:hover{
+	color: #f4b054;
+}
+
+.bg_image{
+    background-image:url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position: 95%;
+}

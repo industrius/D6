@@ -1,0 +1,35 @@
+{% extends "wrapper.html" %}
+{% block content %}
+
+    <div class="bg_color rounded py-3">
+        <div class="row m-3">
+            <div class="col">
+                <img width="440" src="{{ object.foto.url }}">
+            </div>
+            <div class="col cb_color">
+                <h3>{{ object.nickname }}</h3>
+                <p class="mt-4">Порода: {{ object.breed }}</p>
+                <p>Возраст: {{ object.age_str }}</p>
+                <p>{{ object.description }}</p>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <form action="/pet/{{ object.id }}" method="post">
+                    {% csrf_token %}
+                        <p class="cb_color">Добавить комментарий</p>
+                        <input class="w-100" type="text" name="note">
+                    <input class="btn cb_color btn_hover w-100 mt-2" type="submit" value="Сохранить">  
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    {% for comment in object.comment.all %}
+        <div class="rounded bg_color cb_color my-4">
+            <p class="p-4">{{ comment.note }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "wrapper.html" %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3">
+    {% for pet in object_list %}
+        <div class="col mb-4">
+          <a href="/pet/{{ pet.id }}" class="text-decoration-none">
+            <div class="card border-0 h-100 bg_color">
+              <img src="{{ pet.foto.url }}" class="card-img-top" width="300">
+              <div class="card-body cb_color">
+                <h5 class="card-title">{{ pet.nickname }}</h5>
+                <p class="card-text">{{ pet.description }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

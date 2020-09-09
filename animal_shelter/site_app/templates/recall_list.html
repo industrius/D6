@@ -1,0 +1,29 @@
+{% extends "wrapper.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="bg_color rounded p-4">
+    <h3 class="cb_color w-100 text-center">Добавить отзыв</h3>
+    <form action="/recall" method="post">
+        {% csrf_token %}
+        <div class="form-row m-0">
+            <div class="form-group col-12 cb_color">
+                {{ recall_form.name|as_crispy_field }}
+                {{ recall_form.review|as_crispy_field }}
+            </div>
+        </div>
+        <input class="btn cb_color btn_hover w-100" type="submit" value="Сохранить">  
+    </form>
+</div>
+
+
+{% for recall in recall_list %}
+    <div class="card border-0 my-4">
+        <div class="card-header bg_color cb_color lead">
+            {{ recall.name }}
+        </div>
+        <div class="card-body bg_color cb_color rounded-bottom">
+            <p>{{ recall.review }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
